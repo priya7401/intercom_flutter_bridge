@@ -55,7 +55,9 @@ class _HelpPageState extends State<HelpPage> {
       dotenv.env[Platform.isAndroid ? 'INTERCOM_ANDROID_API_KEY' : 'INTERCOM_IOS_API_KEY'].toString(), // Replace with your API Key
       dotenv.env['INRETCOM_APP_ID'].toString(), // Replace with your App ID
     );
-    await IntercomService.setUserHash(dotenv.env['INTERCOM_USER_HASH'].toString());
+    // the user hash is unique for a user and generated on the BE server
+    // make an api call to BE server to fetch it and then set the hash
+    await IntercomService.setUserHash('<intercom_user_hash>');
 
     await IntercomService.registerUser('1'); // Register a user
   }
