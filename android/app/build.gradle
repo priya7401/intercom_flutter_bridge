@@ -2,6 +2,7 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'
 }
 
 def localProperties = new Properties()
@@ -68,4 +69,6 @@ dependencies {
     implementation("io.intercom.android:intercom-sdk:latest.release")
     // If you want to enable push notification, add the following dependency
     implementation("com.google.firebase:firebase-messaging:23.1.+")
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    // implementation 'com.google.firebase:firebase-analytics'
 }
